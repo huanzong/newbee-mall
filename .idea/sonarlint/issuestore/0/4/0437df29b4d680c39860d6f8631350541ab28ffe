@@ -1,0 +1,14 @@
+
+fsquid:S00100:"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(²·ö«
+usquid:S00116"XRename this field "comment_count" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(Ÿõ™ üÿÿÿÿ
+msquid:S00116	"URename this field "view_count" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(¨Šİà
+fsquid:S00100F"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(Ì¶È¸
+nsquid:S00117B"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(Õ³¤èûÿÿÿÿ
+ksquid:S00100B"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(Õ³¤èûÿÿÿÿ
+fsquid:S001006"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(×ˆÑ
+ksquid:S00100>"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(Ã£Üòüÿÿÿÿ
+fsquid:S00100J"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(¢©ÿÄ
+isquid:S00117:"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(²·ö«
+msquid:S00116
+"URename this field "like_count" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ü“Ú
+isquid:S00117J"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(¢©ÿÄ

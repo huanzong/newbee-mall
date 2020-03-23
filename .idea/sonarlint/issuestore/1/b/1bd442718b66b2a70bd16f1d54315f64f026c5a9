@@ -1,0 +1,8 @@
+
+fsquid:S4488["JReplace "@RequestMapping(method = RequestMethod.POST)" with "@PostMapping"(û€¢Ğşÿÿÿÿ
+Bsquid:S5411˜"*Use the primitive boolean expression here.(×¦»ª
+_squid:S4488,"HReplace "@RequestMapping(method = RequestMethod.GET)" with "@GetMapping"(Î‹µ
+dsquid:S44889"HReplace "@RequestMapping(method = RequestMethod.GET)" with "@GetMapping"(àéœ¦ıÿÿÿÿ
+bsquid:S4488’"JReplace "@RequestMapping(method = RequestMethod.POST)" with "@PostMapping"(™èöÚ
+asquid:S4488p"JReplace "@RequestMapping(method = RequestMethod.POST)" with "@PostMapping"(¾Àã’
+gsquid:S11920"PDefine a constant instead of duplicating this literal "å‚æ•°å¼‚å¸¸ï¼" 5 times.(’È§

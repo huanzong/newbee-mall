@@ -1,0 +1,8 @@
+
+@squid:S1481Z")Remove this unused "user" local variable.(öåıÖ
+Nsquid:S1135<"2Complete the task associated to this TODO comment.(Ş×ßÏıÿÿÿÿ
+dsquid:UselessImportCheck"ARemove this unused import 'org.springframework.util.StringUtils'.(Ğôÿ
+Osquid:S1854Z"8Remove this useless assignment to local variable "user".(öåıÖ
+lsquid:S1192&"PDefine a constant instead of duplicating this literal "error/error_5xx" 3 times.(¾ÇÂòÿÿÿÿÿ
+Fsquid:S5411]"*Use the primitive boolean expression here.(Ü¦¤¯şÿÿÿÿ
+Nsquid:S1135L"2Complete the task associated to this TODO comment.(Ş×ßÏıÿÿÿÿ

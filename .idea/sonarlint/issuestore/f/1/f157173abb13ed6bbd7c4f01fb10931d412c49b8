@@ -1,0 +1,12 @@
+
+gsquid:S4488¤"JReplace "@RequestMapping(method = RequestMethod.POST)" with "@PostMapping"(óû²ÿøÿÿÿÿ
+hsquid:S1192€"PDefine a constant instead of duplicating this literal "å‚æ•°å¼‚å¸¸ï¼" 4 times.(’È§
+_squid:S4488|"HReplace "@RequestMapping(method = RequestMethod.GET)" with "@GetMapping"(ªõ‡¤
+Ksquid:S1066H"/Merge this if statement with the enclosing one.(Èü»Âùÿÿÿÿ
+gsquid:S4488‰"JReplace "@RequestMapping(method = RequestMethod.POST)" with "@PostMapping"(„ïİ¥üÿÿÿÿ
+rsquid:S11927"VDefine a constant instead of duplicating this literal "secondLevelCategories" 3 times.(âà¾Æùÿÿÿÿ
+`squid:S4488Ì"HReplace "@RequestMapping(method = RequestMethod.PUT)" with "@PutMapping"(­Êî
+qsquid:S11928"UDefine a constant instead of duplicating this literal "thirdLevelCategories" 3 times.(ıŠëøÿÿÿÿ
+lsquid:S11926"UDefine a constant instead of duplicating this literal "firstLevelCategories" 3 times.(úĞ¼Î
+isquid:S3776A"RRefactor this method to reduce its Cognitive Complexity from 24 to the 15 allowed.( Ñ£
+Gsquid:S5411Õ"*Use the primitive boolean expression here.(Ø›‹úùÿÿÿÿ

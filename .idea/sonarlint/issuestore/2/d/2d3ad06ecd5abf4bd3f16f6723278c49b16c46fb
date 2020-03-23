@@ -1,0 +1,4 @@
+
+Ysquid:S2259<"BA "NullPointerException" could be thrown; "user" is nullable here.(İ¹ÍÛ
+Ysquid:S2259A"BA "NullPointerException" could be thrown; "user" is nullable here.(Íªùº
+Xsquid:S24411":Make "User" serializable or don't store it in the session.(úÆè“8±ˆ›„.

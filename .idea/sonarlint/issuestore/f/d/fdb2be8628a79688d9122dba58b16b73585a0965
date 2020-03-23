@@ -1,0 +1,9 @@
+
+gsquid:S1192+"PDefine a constant instead of duplicating this literal "å‚æ•°å¼‚å¸¸ï¼" 4 times.(’È§
+asquid:S4488G"JReplace "@RequestMapping(method = RequestMethod.POST)" with "@PostMapping"(Ã›Ò¼
+fsquid:S4488g"JReplace "@RequestMapping(method = RequestMethod.POST)" with "@PostMapping"(ŠÅâ™ûÿÿÿÿ
+dsquid:S4488'"HReplace "@RequestMapping(method = RequestMethod.GET)" with "@GetMapping"(Ç³Î˜úÿÿÿÿ
+asquid:S44884"JReplace "@RequestMapping(method = RequestMethod.POST)" with "@PostMapping"(¶¶ÌÇ
+zsquid:UselessImportCheck"QRemove this unused import 'ltd.newbee.mall.service.NewBeeMallIndexConfigService'.(Å˜ÅÈûÿÿÿÿ
+csquid:UselessImportCheck"?Remove this unused import 'ltd.newbee.mall.entity.IndexConfig'.(Şøí§
+Asquid:S5411m"*Use the primitive boolean expression here.(Òáˆª
