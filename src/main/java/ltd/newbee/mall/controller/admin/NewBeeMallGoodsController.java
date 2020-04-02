@@ -8,6 +8,7 @@ import ltd.newbee.mall.entity.NewBeeMallGoods;
 import ltd.newbee.mall.service.NewBeeMallCategoryService;
 import ltd.newbee.mall.service.NewBeeMallGoodsService;
 import ltd.newbee.mall.util.PageQueryUtil;
+import ltd.newbee.mall.util.PageResult;
 import ltd.newbee.mall.util.Result;
 import ltd.newbee.mall.util.ResultGenerator;
 import org.springframework.stereotype.Controller;
@@ -17,10 +18,7 @@ import org.springframework.web.bind.annotation.*;
 
 import javax.annotation.Resource;
 import javax.servlet.http.HttpServletRequest;
-import java.util.Collections;
-import java.util.List;
-import java.util.Map;
-import java.util.Objects;
+import java.util.*;
 
 /**
  * @author 13
@@ -214,6 +212,29 @@ public class NewBeeMallGoodsController {
             return ResultGenerator.genSuccessResult();
         } else {
             return ResultGenerator.genFailResult("修改失败");
+        }
+    }
+
+
+    @GetMapping("/testInfo")
+    @ResponseBody
+    public void testInfo() {
+        Map<String, Object> params = new HashMap<>();
+        params.put("page", 1);
+        params.put("limit", 10000);
+        PageQueryUtil pageUtil = new PageQueryUtil(params);
+        PageResult page = newBeeMallGoodsService.getNewBeeMallGoodsPage(pageUtil);
+        List<NewBeeMallGoods> list = (List<NewBeeMallGoods>) page.getList();
+        for (int i = 0; i < list.size(); i++) {
+            NewBeeMallGoods info = list.get(i);
+            info.getGoodsCoverImg();
+            String imageName = "/goods-img/product" + (i + 1) + ".jpg";
+            info.setGoodsCoverImg(imageName);
+            info.setGoodsCarousel(imageName);
+            info.setGoodsName("商品" + (i + 1));
+            info.setCreateTime(new Date());
+            info.setUpdateTime(new Date());
+            newBeeMallGoodsService.updateNewBeeMallGoods(info);
         }
     }
 

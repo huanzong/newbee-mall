@@ -55,7 +55,7 @@
         select
         <include refid="Base_Column_List"/>
         from tb_newbee_mall_user
-        where login_name = #{loginName} and password_md5 = #{password} and is_deleted = 0
+        where login_name = #{loginName} and password_md5 = #{password} and is_deleted = 0 and locked_flag = 0
     </select>
     <update id="deleteByPrimaryKey" parameterType="java.lang.Long">
     update tb_newbee_mall_user set is_deleted = 1

@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html>
-<meta name="referrer" content="no-referrer" />
+<meta name="referrer" content="no-referrer"/>
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -16,7 +16,8 @@
     <form class="form-signin" action="/logincheck" method="post">
         <h2 class="form-signin-heading">Please sign in</h2>
         <label for="username" class="sr-only">Username</label>
-        <input type="username" id="username" name="username" class="form-control" placeholder="Username" required autofocus>
+        <input type="username" id="username" name="username" class="form-control" placeholder="Username" required
+               autofocus>
         <label for="password" class="sr-only">Password</label>
         <input type="password" id="password" name="password" class="form-control" placeholder="Password" required>
         <div class="checkbox">
@@ -24,12 +25,34 @@
                 <input type="checkbox" value="remember-me"> Remember me
             </label>
         </div>
-        <button class="btn btn-lg btn-primary btn-block" type="submit">Sign in</button>
-        <span><a href="/register" class="register">重新注册一个用户</a></span>
+        <button onclick="getMyName()" class="btn btn-lg btn-primary btn-block" type="submit">Sign in</button>
+        <span><a href="/register1" class="register">重新注册一个用户</a></span>
     </form>
 </div> <!-- /container -->
 <script src="https://cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
 <!-- 最新的 Bootstrap 核心 JavaScript 文件 -->
 <script src="js/bootstrap.min.js"></script>
+
+
+<script language="JavaScript">
+
+
+    function getMyName() {
+        alert("请确认登录信息填写正确");
+    }
+
+    function getCookie(c_name) {
+        if (document.cookie.length > 0) {
+            c_start = document.cookie.indexOf(c_name + "=")
+            if (c_start != -1) {
+                c_start = c_start + c_name.length + 1
+                c_end = document.cookie.indexOf(";", c_start)
+                if (c_end == -1) c_end = document.cookie.length
+                return unescape(document.cookie.substring(c_start, c_end))
+            }
+        }
+        return ""
+    }
+</script>
 </body>
 </html>

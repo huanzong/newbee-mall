@@ -19,7 +19,7 @@ public class registerController {
     @Resource
     private UserMapper userMapper;
 
-    @GetMapping("/register")
+    @GetMapping("/register1")
     public String register() {
         return "register";
     }
@@ -38,10 +38,10 @@ public class registerController {
         //如果用户注册成功，则把用户信息写进session，直接跳转到主页
         if (userMapper.select(user) != null) {
             response.addCookie(new Cookie("token", token));
-            return "redirect:/index";
+            return "redirect:/index1";
         } else {
             //注册失败，处理方法先省略
-            return "register";
+            return "register1";
         }
     }
 }

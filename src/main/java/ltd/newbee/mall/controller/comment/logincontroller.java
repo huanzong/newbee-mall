@@ -38,6 +38,7 @@ public class logincontroller {
             response.addCookie(new Cookie("token", token));
         } else {
             //登陆失败，重新登陆
+            return "redirect:/login1";
         }
         return "redirect:/index1";
     }
