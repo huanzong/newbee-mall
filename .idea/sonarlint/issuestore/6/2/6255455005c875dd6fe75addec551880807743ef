@@ -1,0 +1,15 @@
+
+CWeb:PageWithoutTitleCheck"Add a <title> tag to this page.(æ·‡h
+m%Web:ItemTagNotWithinContainerTagCheck"<Surround this <li> item tag by a <ul> or <ol> container one.(ñâ›
+r%Web:ItemTagNotWithinContainerTagCheck"<Surround this <li> item tag by a <ul> or <ol> container one.(§æ¤Âøÿÿÿÿ
+m%Web:ItemTagNotWithinContainerTagCheck"<Surround this <li> item tag by a <ul> or <ol> container one.( ÁÛ€
+r%Web:ItemTagNotWithinContainerTagCheck"<Surround this <li> item tag by a <ul> or <ol> container one.(§æ¤Âøÿÿÿÿ
+IWeb:AvoidCommentedOutCodeCheck"Remove this commented out code.(¢ß¦ù
+LWeb:ImgWithoutAltCheck"%Add an "alt" attribute to this image.(Ìò”ûÿÿÿÿ
+GWeb:ImgWithoutAltCheck3"%Add an "alt" attribute to this image.(°Ä‡
+GWeb:ImgWithoutAltCheck7"%Add an "alt" attribute to this image.(ú„‰¨
+LWeb:ImgWithoutAltCheck8"%Add an "alt" attribute to this image.(’­”Òùÿÿÿÿ
+LWeb:ImgWithoutAltCheck9"%Add an "alt" attribute to this image.(àœÔûûÿÿÿÿ
+^	Web:S5255
+"DAdd an "aria-label" or "aria-labbelledby" attribute to this element.(ı–Ñøÿÿÿÿ
+^	Web:S5255"DAdd an "aria-label" or "aria-labbelledby" attribute to this element.(òäé«üÿÿÿÿ
