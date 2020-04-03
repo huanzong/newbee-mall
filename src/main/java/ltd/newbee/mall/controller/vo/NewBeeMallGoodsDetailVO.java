@@ -1,6 +1,7 @@
 package ltd.newbee.mall.controller.vo;
 
 import java.io.Serializable;
+import java.util.Date;
 import java.util.List;
 
 /**
@@ -25,6 +26,16 @@ public class NewBeeMallGoodsDetailVO implements Serializable {
     private String goodsDetailContent;
 
     private Byte goodsSellStatus;
+
+    private Date imitedTime;
+
+    public Date getImitedTime() {
+        return imitedTime;
+    }
+
+    public void setImitedTime(Date imitedTime) {
+        this.imitedTime = imitedTime;
+    }
 
     public Long getGoodsId() {
         return goodsId;

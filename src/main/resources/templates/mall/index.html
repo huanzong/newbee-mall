@@ -370,37 +370,6 @@
         return i;
     }
 
-    //显示浏览器现在的时间
-    function formatTime(timeVal) {
-        var datePara = new Date(timeVal);//定义日期对象
-        var yyyy = datePara.getFullYear();//通过日期对象的getFullYear()方法返回年
-        var MM = datePara.getMonth() + 1;//通过日期对象的getMonth()方法返回月
-        var dd = datePara.getDate();//通过日期对象的getDate()方法返回日
-        var hh = datePara.getHours();//通过日期对象的getHours方法返回时
-        var mm = datePara.getMinutes();//通过日期对象的getMinutes方法返回分
-        var ss = datePara.getSeconds();//通过日期对象的getSeconds方法返回秒
-        // 如果分钟或小时的值小于10，则在其值前加0，比如如果时间是下午3点20分9秒的话，则显示15：20：09
-        MM = checkTime(MM);
-        dd = checkTime(dd);
-        hh = checkTime(hh);
-        mm = checkTime(mm);
-        ss = checkTime(ss);
-
-        //用于保存星期（getDay()方法得到星期编号）
-        var day;
-        if (datePara.getDay() == 0) day = "星期日 "
-        if (datePara.getDay() == 1) day = "星期一 "
-        if (datePara.getDay() == 2) day = "星期二 "
-        if (datePara.getDay() == 3) day = "星期三 "
-        if (datePara.getDay() == 4) day = "星期四 "
-        if (datePara.getDay() == 5) day = "星期五 "
-        if (datePara.getDay() == 6) day = "星期六 "
-
-        //document.getElementById('start').value = yyyy + "-" + MM + "-" + dd + " " + hh + ":" + mm + ":" + ss + " " + day;
-        //setTimeout('formatTime()', 1000);//每一秒中重新加载formatTime()方法
-        return yyyy + "-" + MM + "-" + dd + " " + hh + ":" + mm + ":" + ss; //+ " " + day;
-    }
-
 
     //倒计时
     function setTimer() {

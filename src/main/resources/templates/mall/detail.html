@@ -41,14 +41,18 @@
             </div>
 
             <div class="order">
-                <input class="car" type="button" th:if="${goodsDetail.goodsSellStatus} eq '0'"   th:onclick="'saveAndGoCart('+${goodsDetail.goodsId}+')'" value="立即选购"/>
-                <input class="car" type="button" th:if="${goodsDetail.goodsSellStatus} eq '0'"   th:onclick="'saveToCart('+${goodsDetail.goodsId}+')'" value="加入购物车"/>
+                <input id="saveAndGoCart" plus="" th:imitedTime="${goodsDetail.imitedTime}" class="car" type="button" th:if="${goodsDetail.goodsSellStatus} eq '0'"   th:onclick="'saveAndGoCart('+${goodsDetail.goodsId}+')'" value="立即选购"/>
+                <input id="gouwuche" class="car" type="button" th:if="${goodsDetail.goodsSellStatus} eq '0'"   th:onclick="'saveToCart('+${goodsDetail.goodsId}+')'" value="加入购物车"/>
             </div>
             <div class="tb-extra ml20" id="J_tbExtra">
-                <dl>
+                <dl id="qianggou">
+                    <dt>抢购：</dt>
+                    <dd><a id="qianggouTime" class="J_Cont"  href="#"
+                           target="_blank"></a></dd>
+                </dl><dl>
                     <dt>承诺</dt>
                     <dd><a class="J_Cont" title="满足7天无理由退换货申请的前提下，包邮商品需要买家承担退货邮费，非包邮商品需要买家承担发货和退货邮费。" href="#"
-                           target="_blank"><img th:src="@{/mall/image/7d.jpg}">7天无理由</a></dd>
+                           target="_blank">7天无理由</a></dd>
                 </dl>
                 <dl>
                     <dt>支付</dt>
@@ -78,6 +82,25 @@
 <script th:src="@{/admin/plugins/sweetalert/sweetalert.min.js}"></script>
 <script th:src="@{/mall/js/search.js}" type="text/javascript"></script>
 <script type="text/javascript">
+
+    $(function () {
+        var time = $("#saveAndGoCart").attr("imitedTime");
+        if (time != null && time != "") {
+            var date = new Date(time);
+            // 有三种方式获取
+            var time1 = date.getTime();
+            var time2 = new Date().getTime();
+            var cha = time1 - time2;
+            if (cha < 0) {
+                $("#saveAndGoCart").val("抢购截止")
+                $("#saveAndGoCart").attr("disabled","disabled")
+                $("#gouwuche").attr("disabled","disabled")
+                $("#saveAndGoCart").css('background-color','#BFEFFF');
+                $("#gouwuche").css('background-color','#BFEFFF');
+            }
+        }
+    })
+
     /**
      * 添加到购物车
      */
@@ -161,6 +184,66 @@
             }
         });
     }
+</script>
+<script>
+
+    setTimer();
+
+    //时间为一位数时显示格式为："0X"
+    function checkTime(i) {
+        if (i < 10) {
+            i = "0" + i;
+        }
+        return i;
+    }
+
+
+    //倒计时
+    function setTimer() {
+        var plus = $("#saveAndGoCart").attr("plus");
+        var limitTime = $("#saveAndGoCart").attr("imitedTime");
+        if(limitTime!=undefined&&limitTime!=""&&limitTime!=null){
+            if (!plus) {
+                //服务器现在的时间（这里只是测试，就用浏览器时间代替）
+                var startTime = new Date();
+                //活动截止时间endTime（预先给定的值）
+                var end = $("#saveAndGoCart").attr("imitedTime");
+                var endTime = new Date(end);
+                //活动截止时间与当前时间的时间差
+                plus = endTime - startTime;
+                $("#saveAndGoCart").attr("plus",plus);
+            }
+            else {
+                //距离活动结束还剩余的时间，第二次以后就不需要再计算，直接自减即可
+                plus -= 1000;
+                $("#saveAndGoCart").attr("plus",plus);
+            }
+
+            var day = parseInt(plus / 1000 / 60 / 60 / 24);
+            var hour = parseInt(plus / 1000 / 60 / 60) - day * 24;
+            var minute = parseInt(plus / 1000 / 60) - parseInt(plus / 1000 / 60 / 60) * 60;
+            var second = parseInt(plus / 1000) - parseInt(plus / 1000 / 60) * 60;
+            // 如果分钟或小时的值小于10，则在其值前加0，比如如果时间是下午3点20分9秒的话，则显示15：20：09
+            day = checkTime(day);
+            hour = checkTime(hour);
+            minute = checkTime(minute);
+            second = checkTime(second);
+            if(plus>0){
+                $("#qianggouTime").text(" ----限时抢购:" + day + "天" + hour + "时" + minute + "分" + second + "秒");
+            }else {
+                $("#qianggouTime").text("抢购截止")
+            }
+            if (plus <= 1) {
+                clearInterval(id);
+            }
+
+
+        }
+
+    }
+
+    //每秒循环一次，刷新活动截止时间与当前时间的时间差
+    var id = setInterval(setTimer, 1000);
 </script>
 </body>
 </html>
