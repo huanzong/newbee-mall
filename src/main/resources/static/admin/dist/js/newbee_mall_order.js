@@ -161,6 +161,10 @@ function orderEdit() {
         return;
     }
     var rowData = $("#jqGrid").jqGrid("getRowData", id);
+    if(rowData.orderStatus != "待支付"){
+        alert("已支付订单不允许修改");
+        return;
+    }
     $('.modal-title').html('订单编辑');
     $('#orderInfoModal').modal('show');
     $("#orderId").val(id);
