@@ -1,7 +1,10 @@
 package ltd.newbee.mall.entity;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
+import org.springframework.format.annotation.DateTimeFormat;
 
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.Date;
 
 public class NewBeeMallGoods {
@@ -32,7 +35,6 @@ public class NewBeeMallGoods {
     @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss", timezone = "GMT+8")
     private Date createTime;
 
-    @JsonFormat(pattern = "yyyy-MM-dd HH:mm", timezone = "GMT+8")
     private Date imitedTime;
 
     private Integer updateUser;
@@ -48,6 +50,7 @@ public class NewBeeMallGoods {
     }
 
     public void setImitedTime(Date imitedTime) {
+
         this.imitedTime = imitedTime;
     }
 

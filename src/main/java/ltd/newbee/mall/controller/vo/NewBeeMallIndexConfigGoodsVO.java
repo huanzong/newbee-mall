@@ -22,6 +22,16 @@ public class NewBeeMallIndexConfigGoodsVO implements Serializable {
 
     private Date imitedTime;
 
+    private String timestamp;
+
+    public String getTimestamp() {
+        return timestamp;
+    }
+
+    public void setTimestamp(String timestamp) {
+        this.timestamp = timestamp;
+    }
+
     public Date getImitedTime() {
         return imitedTime;
     }

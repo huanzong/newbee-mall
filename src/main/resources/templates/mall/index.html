@@ -71,7 +71,7 @@
         <!-- 已配置热销商品则显示配置内容 -->
         <th:block th:unless="${#lists.isEmpty(hotGoodses)}">
             <th:block th:each="hotGoodse : ${hotGoodses}">
-                <div plus="" th:imitedTime="@{${hotGoodse.imitedTime}}" class="hot-image limitTimeEach">
+                <div plus="" th:imitedTime="@{${hotGoodse.timestamp}}" class="hot-image limitTimeEach">
                     <a th:href="@{'/goods/detail/'+${hotGoodse.goodsId}}">
                         <img th:src="@{${hotGoodse.goodsCoverImg}}" th:alt="${hotGoodse.goodsName}">
                     </a>
