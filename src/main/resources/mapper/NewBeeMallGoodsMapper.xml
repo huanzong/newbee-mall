@@ -166,6 +166,13 @@
     delete from tb_newbee_mall_goods_info
     where goods_id = #{goodsId,jdbcType=BIGINT}
   </delete>
+    <delete id="updateAllGoods">
+        delete from tb_newbee_mall_goods_info
+    </delete>
+    <delete id="updateAllCategory">
+        delete from tb_newbee_mall_goods_category
+    </delete>
+
     <insert id="insert" parameterType="ltd.newbee.mall.entity.NewBeeMallGoods">
     insert into tb_newbee_mall_goods_info (goods_id, goods_name, goods_intro, 
       goods_cover_img, goods_carousel, original_price, 
