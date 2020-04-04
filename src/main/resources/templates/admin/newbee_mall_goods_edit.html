@@ -108,7 +108,7 @@
 
 
                                 <label class="control-label" style="margin-left: 350px">限时抢购截止时间:&nbsp;</label>
-                                <input type="datetime-local" id="imitedTime" class="form-control col-sm-3"  name="imitedTime" th:value="${goods!=null and goods.imitedTime!=null }?${goods.imitedTime}: ''">
+                                <input type="datetime-local" id="imitedTime" th:imitedTime="${goods!=null and goods.imitedTime!=null }?${timestamp}: ''" class="form-control col-sm-3"  name="imitedTime" th:value="${goods!=null and goods.imitedTime!=null }?${goods.imitedTime}: ''">
                             </div>
                             <div class="form-group">
                                 <textarea id="editor" style="width: 100%; height: 750px;"
@@ -195,5 +195,30 @@
 <script th:src="@{/admin/plugins/kindeditor-4.1.10/lang/zh_CN.js}"></script>
 <script th:src="@{/admin/dist/js/public.js}"></script>
 <script th:src="@{/admin/dist/js/newbee_mall_goods_edit.js}"></script>
+<script>
+    $(function () {
+        var timestamp = $("#imitedTime").attr("imitedTime");
+        var time = new Date(timestamp);
+        var time1 = getFormat(time);
+        $("#imitedTime").val(time1);
+    })
+
+    //构造符合datetime-local格式的当前日期
+    function getFormat(nTime){
+        var format="";
+        format += nTime.getFullYear()+"-";
+        format += (nTime.getMonth()+1)<10?"0"+(nTime.getMonth()+1):(nTime.getMonth()+1);
+        format += "-";
+        format += nTime.getDate()<10?"0"+(nTime.getDate()):(nTime.getDate());
+        format += "T";
+        format += nTime.getHours()<10?"0"+(nTime.getHours()):(nTime.getHours());
+        format += ":";
+        format += nTime.getMinutes()<10?"0"+(nTime.getMinutes()):(nTime.getMinutes());
+        format += ":00";
+
+        return format;
+    }
+
+</script>
 </body>
 </html>

@@ -18,6 +18,8 @@ import org.springframework.web.bind.annotation.*;
 
 import javax.annotation.Resource;
 import javax.servlet.http.HttpServletRequest;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.*;
 
 /**
@@ -110,6 +112,11 @@ public class NewBeeMallGoodsController {
                     request.setAttribute("thirdLevelCategories", thirdLevelCategories);
                 }
             }
+        }
+        if (newBeeMallGoods.getImitedTime() != null) {
+            SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+            String dateStr = simpleDateFormat.format(newBeeMallGoods.getImitedTime());
+            request.setAttribute("timestamp", dateStr);
         }
         request.setAttribute("goods", newBeeMallGoods);
         request.setAttribute("path", "goods-edit");
