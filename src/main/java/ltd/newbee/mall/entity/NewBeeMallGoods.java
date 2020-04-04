@@ -35,6 +35,7 @@ public class NewBeeMallGoods {
     @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss", timezone = "GMT+8")
     private Date createTime;
 
+    @JsonFormat(pattern = "yyyy-MM-dd HH:mm", timezone = "GMT+8")
     private Date imitedTime;
 
     private Integer updateUser;
