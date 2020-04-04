@@ -41,7 +41,7 @@
             </div>
 
             <div class="order">
-                <input id="saveAndGoCart" plus="" th:imitedTime="${goodsDetail.imitedTime}" class="car" type="button" th:if="${goodsDetail.goodsSellStatus} eq '0'"   th:onclick="'saveAndGoCart('+${goodsDetail.goodsId}+')'" value="立即选购"/>
+                <input id="saveAndGoCart" plus="" th:imitedTime="${timestamp}" class="car" type="button" th:if="${goodsDetail.goodsSellStatus} eq '0'"   th:onclick="'saveAndGoCart('+${goodsDetail.goodsId}+')'" value="立即选购"/>
                 <input id="gouwuche" class="car" type="button" th:if="${goodsDetail.goodsSellStatus} eq '0'"   th:onclick="'saveToCart('+${goodsDetail.goodsId}+')'" value="加入购物车"/>
             </div>
             <div class="tb-extra ml20" id="J_tbExtra">
@@ -196,42 +196,58 @@
         }
         return i;
     }
-
+    function formatDate(date) {
+        var y = date.getFullYear();
+        var m = date.getMonth() + 1;
+        m = m < 10 ? ('0' + m) : m;
+        var d = date.getDate();
+        d = d < 10 ? ('0' + d) : d;
+        var h = date.getHours();
+        var minute = date.getMinutes();
+        minute = minute < 10 ? ('0' + minute) : minute;
+        var second= date.getSeconds();
+        second = minute < 10 ? ('0' + second) : second;
+        return y + '-' + m + '-' + d+' '+h+':'+minute+':'+ second;
+    };
 
     //倒计时
     function setTimer() {
-        var plus = $("#saveAndGoCart").attr("plus");
-        var limitTime = $("#saveAndGoCart").attr("imitedTime");
-        if(limitTime!=undefined&&limitTime!=""&&limitTime!=null){
-            if (!plus) {
-                //服务器现在的时间（这里只是测试，就用浏览器时间代替）
-                var startTime = new Date();
-                //活动截止时间endTime（预先给定的值）
-                var end = $("#saveAndGoCart").attr("imitedTime");
-                var endTime = new Date(end);
-                //活动截止时间与当前时间的时间差
-                plus = endTime - startTime;
-                $("#saveAndGoCart").attr("plus",plus);
-            }
-            else {
+        var end = $("#saveAndGoCart").attr("imitedTime");
+
+        if(end!=undefined&&end!=""&&end!=null){
+            //服务器现在的时间（这里只是测试，就用浏览器时间代替）
+            var startTime = new Date();
+            //活动截止时间endTime（预先给定的值）
+            var endTime = new Date(end);
+            var aa = formatDate(endTime);
+            //活动截止时间与当前时间的时间差
+            var plus = endTime - startTime;
+            if (plus>0) {
                 //距离活动结束还剩余的时间，第二次以后就不需要再计算，直接自减即可
                 plus -= 1000;
-                $("#saveAndGoCart").attr("plus",plus);
             }
+            var date3=endTime.getTime()-startTime.getTime()  //时间差的毫秒数
+            //计算出相差天数
+            var days=Math.floor(date3/(24*3600*1000))
+            //计算出小时数
 
-            var day = parseInt(plus / 1000 / 60 / 60 / 24);
-            var hour = parseInt(plus / 1000 / 60 / 60) - day * 24;
-            var minute = parseInt(plus / 1000 / 60) - parseInt(plus / 1000 / 60 / 60) * 60;
-            var second = parseInt(plus / 1000) - parseInt(plus / 1000 / 60) * 60;
-            // 如果分钟或小时的值小于10，则在其值前加0，比如如果时间是下午3点20分9秒的话，则显示15：20：09
-            day = checkTime(day);
-            hour = checkTime(hour);
-            minute = checkTime(minute);
-            second = checkTime(second);
+            var leave1=date3%(24*3600*1000)    //计算天数后剩余的毫秒数
+            var hours=Math.floor(leave1/(3600*1000))
+            //计算相差分钟数
+            var leave2=leave1%(3600*1000)        //计算小时数后剩余的毫秒数
+            var minutes=Math.floor(leave2/(60*1000))
+            //计算相差秒数
+            var leave3=leave2%(60*1000)      //计算分钟数后剩余的毫秒数
+            var seconds=Math.round(leave3/1000)
             if(plus>0){
-                $("#qianggouTime").text(" ----限时抢购:" + day + "天" + hour + "时" + minute + "分" + second + "秒");
+                $("#qianggouTime").text(" ----限时抢购:" + days + "天" + hours + "时" + minutes + "分" + seconds + "秒");
             }else {
                 $("#qianggouTime").text("抢购截止")
+                $("#saveAndGoCart").val("抢购截止")
+                $("#saveAndGoCart").attr("disabled","disabled")
+                $("#gouwuche").attr("disabled","disabled")
+                $("#saveAndGoCart").css('background-color','#BFEFFF');
+                $("#gouwuche").css('background-color','#BFEFFF');
             }
             if (plus <= 1) {
                 clearInterval(id);

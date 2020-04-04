@@ -14,6 +14,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.util.CollectionUtils;
 
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Collectors;
@@ -82,6 +83,11 @@ public class NewBeeMallIndexConfigServiceImpl implements NewBeeMallIndexConfigSe
                 if (goodsIntro.length() > 22) {
                     goodsIntro = goodsIntro.substring(0, 22) + "...";
                     newBeeMallIndexConfigGoodsVO.setGoodsIntro(goodsIntro);
+                }
+                if (newBeeMallIndexConfigGoodsVO.getImitedTime() != null) {
+                    SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+                    String dateStr = simpleDateFormat.format(newBeeMallIndexConfigGoodsVO.getImitedTime());
+                    newBeeMallIndexConfigGoodsVO.setTimestamp(dateStr);
                 }
             }
         }
