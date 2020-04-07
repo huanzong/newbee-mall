@@ -1,5 +1,5 @@
 
-ksquid:S4488g"HReplace "@RequestMapping(method = RequestMethod.GET)" with "@GetMapping"(ÌÎÿÿÿÿÿ8ÿæèƒ.
-Xsquid:S24415":Make "User" serializable or don't store it in the session.(úÆè“8Î¢Ÿ….
 `squid:S2259C"BA "NullPointerException" could be thrown; "user" is nullable here.(¦îºı8ÿæèƒ.
+Xsquid:S24415":Make "User" serializable or don't store it in the session.(úÆè“8Î¢Ÿ….
 hsquid:S4488'"JReplace "@RequestMapping(method = RequestMethod.POST)" with "@PostMapping"(ì˜Íÿ8ÿæèƒ.
+ksquid:S4488g"HReplace "@RequestMapping(method = RequestMethod.GET)" with "@GetMapping"(ÌÎÿÿÿÿÿ8ÿæèƒ.

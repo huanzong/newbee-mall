@@ -189,6 +189,7 @@ public class NewBeeMallOrderServiceImpl implements NewBeeMallOrderService {
             }
             //存在数量大于库存的情况，直接返回错误提醒
             if (shoppingCartItemVO.getGoodsCount() > newBeeMallGoodsMap.get(shoppingCartItemVO.getGoodsId()).getStockNum()) {
+//                return ServiceResultEnum.SHOPPING_ITEM_COUNT_ERROR.getResult();
                 NewBeeMallException.fail(ServiceResultEnum.SHOPPING_ITEM_COUNT_ERROR.getResult());
             }
         }
